@@ -3,13 +3,27 @@
  *    Styles for 'Memos' go in this file 
  */
 
-/* Nothing yet */
-
 .lyrics {
-    margin-left: 3em;
-    font-style: italic;
+    margin-left:3em;
+    font-style:italic;
 }
 
 .attribution  {
-    font-size: smaller;
+    font-size:smaller;
+}
+
+.row{
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+#button {
+    width:75px;
+	height:37px;
+	font-size:17px;
+    border:1px solid black;
+}
+
+#datepicker{
+	width:180px;
 }

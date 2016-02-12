@@ -1,4 +1,4 @@
-# proj5-mongo
+# proj6-mongo
 Simple list of dated memos kept in MongoDB database
 
 ## What is here
