@@ -18,7 +18,7 @@
 </script>
 
    <!-- Our own style sheet -->
-   <link rel="stylesheet" href="/static/css/memos.css" />
+   <link rel="stylesheet" type="text/css" href="/static/css/memos.css" />
 
 
 </head>
@@ -40,6 +40,7 @@
 
 {% if session.memos %}
     {% for memo in session.memos %}
+	<form method="POST" action="/_edit">
   <div class="memo">
   <div class="row">
   <div class="col-md-2">
@@ -48,20 +49,39 @@
   <div class="col-md-10">
     {{ memo.text }}
   </div>
+  <div>
+    <input type="hidden" name = "ObjectID" value= "{{ memo._id }}"/>
+  </div>
+  <div>
+    <input type="hidden" name="date" value= "{{ memo.date }}"/>
+  </div>
+  <div>
+    <input type="hidden" name="text" value= "{{ memo.text }}"/>
+  </div>
+  <div class="col-xs-6 text-right">
+    <input type="submit" id="button" value="Edit" />
+  </div>
   </div> <!-- row -->
   </div> <!-- memo -->
+</form>
   {% endfor %}
 {% else %}
   <p>No memos for you. </p>  
 {% endif %}
 
 <div class="row">
-	<div class="cols-xs-6 text-center">
+	<div class="col-xs-6 text-left">
 		<form method="GET" action="/create">
-			<input type="submit" id="submit" value="Add a New Memo" />
+			<input type="submit" id="addbutton" value="Add Memo" />
 		</form>
-	</div></div>
+	</div>
 
+  <div class="col-xs-6 text-right">
+    <form method="POST" action="/_clear">
+        <input type="submit" id="addbutton" value="Clear All Memos" />
+    </form>
+  </div>
+</div>
  
 
 </div> <!-- container -->

@@ -42,32 +42,31 @@
   {% endif %}
 {% endwith %}
 
-<form method="PUT" action="_create">
+<form method="POST" action="/_save">
 <div class="row">
   <div id="datepicker" class="input-group date" data-date-format="mm-dd-yyyy">
-    <input class="form-control" type="text" readonly />
+    <input class="form-control" name="memoDate" type="text" readonly />
     <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
   </div>
   <div class="row">
   <div class="col-md-10">
-    <textarea name=memoBox rows="10" cols="50" placeholder="Write Your Memo Here"
-      value="Memo"> </textarea>
+    <textarea name="memoBox" rows="10" cols="50" placeholder="Write Your Memo Here">
+    </textarea>
   </div>
 </div>
  </div>
  <div class="row">	
-	 <div id="add" class="col-xs-2 text-left">
- 	<form method="GET" action="/index">
+	 <div class="col-xs-2 text-left">
  		<input type = "submit" id="button" value = "Add">
- 	</form>
 </div>
-	 <div id="cancel" class="col-xs-2 text-right">
+</form>
+	 <div class="col-xs-2 text-right">
  	<form method="GET" action="/index">
  		<input type = "submit" id="button" value = "Cancel">
  	</form>
 </div>
  </div>
-</form>
+
 
 
 <script type="text/javascript">

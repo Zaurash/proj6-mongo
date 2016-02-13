@@ -7,11 +7,6 @@ A simple Flask app that displays all the dated memos it finds in a MongoDB datab
 There is also a 'scaffolding' program, db_trial.py, for inserting a couple records into the database 
 and printing them out.  Get db_trial.py working before you try making your flask app work. 
 
-## What you'll add 
-
-The user should be able to add dated memos, either from the same index page or from a separate page. 
-Memos should be displayed in date order. 
-The user should be able to delete memos. 
 
 ## Setting up
 

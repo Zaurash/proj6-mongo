@@ -17,8 +17,20 @@
 	margin-bottom:10px;
 }
 
+.memo {
+   border-width: 2px;
+   border-top: 2px black solid;
+}
+
 #button {
     width:75px;
+	height:37px;
+	font-size:17px;
+    border:1px solid black;
+}
+
+#addbutton{
+    width:150px;
 	height:37px;
 	font-size:17px;
     border:1px solid black;

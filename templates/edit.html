@@ -42,32 +42,38 @@
   {% endif %}
 {% endwith %}
 
-<form method="PUT" action="_create">
 <div class="row">
+	<form method="POST" action="/_update">
   <div id="datepicker" class="input-group date" data-date-format="mm-dd-yyyy">
-    <input class="form-control" type="text" readonly />
+    <input class="form-control" name="memoDate" type="text" readonly />
     <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
   </div>
-  <div class="row">
   <div class="col-md-10">
-    <textarea name=memoBox rows="10" cols="50" placeholder="Write Your Memo Here"
-      value="Memo"> </textarea>
+    <textarea name="memoBox" rows="10" cols="50">{{ session.memo.text }} </textarea>
   </div>
-</div>
  </div>
  <div class="row">	
-	 <div id="add" class="col-xs-2 text-left">
- 	<form method="GET" action="/index">
- 		<input type = "submit" id="button" value = "Add">
+	   <div>
+	      <input type="hidden" name = "ObjectID" value= "{{ session.memo._id }}"/>
+	   </div>
+	 <div class="col-xs-1">
+ 		<input type = "submit" id="button" value = "Update">
+		</form>
+</div>
+	 <div class="col-xs-1">
+ 	<form method="POST" action="/_delete">
+ 	   <div>
+ 	      <input type="hidden" name = "ObjectID" value= "{{ session.memo._id }}"/>
+ 	   </div>
+ 		<input type = "submit" id="button" value = "Delete">
  	</form>
 </div>
-	 <div id="cancel" class="col-xs-2 text-right">
+	 <div id="cancel" class="col-xs-1">
  	<form method="GET" action="/index">
  		<input type = "submit" id="button" value = "Cancel">
  	</form>
 </div>
  </div>
-</form>
 
 
 <script type="text/javascript">
@@ -76,6 +82,7 @@
         autoclose: true,
         todayHighlight: true
     }).datepicker('update', new Date());;
+	$("#datepicker").datepicker("setDate", "{{ session.memo.date }}");
 });
 
 
